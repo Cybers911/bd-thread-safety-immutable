@@ -1,8 +1,8 @@
 
 
-public class ChatMessage implements Runnable {
-    public ChatUser recipient;
-    public ChatMessageContent messageContent;
+public final class ChatMessage implements Runnable {
+    public final ChatUser recipient;
+    public final ChatMessageContent messageContent;
 
     /**
      *
@@ -25,6 +25,7 @@ public class ChatMessage implements Runnable {
     /**
      * Run the thread to send the message to a recipient.
      */
+    @Override
     public void run() {
         // here's where we send the message to our recipient.
         System.out.println("Message: '" + this.messageContent.getMessage() + "' has been sent to user " +
